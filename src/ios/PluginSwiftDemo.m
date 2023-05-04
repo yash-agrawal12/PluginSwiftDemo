@@ -2,7 +2,12 @@
 
 #import <Cordova/CDV.h>
 
-
+//
+//  PluginSwiftDemo.swift
+//  MyApp
+//
+//  Created by Durga Vundavalli on 08/04/20.
+//
 @objc(PluginSwiftDemo) class PluginSwiftDemo : CDVPlugin {
   @objc(coolMethod:)
   func coolMethod(_ command: CDVInvokedUrlCommand) {
@@ -24,4 +29,4 @@ self.commandDelegate!.send(
       callbackId: command.callbackId
     ) 
   }
-@end
+}
