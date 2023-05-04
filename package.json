@@ -1,0 +1,25 @@
+{
+  "name": "cordova-plugin-pluginswiftdemo",
+  "version": "1.0.0",
+  "description": "Swift Cordova Plugin",
+  "cordova": {
+    "id": "cordova-plugin-pluginswiftdemo",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yash-agrawal12/PluginSwiftDemo.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "author": "YASH AGRAWAL",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yash-agrawal12/PluginSwiftDemo/issues"
+  },
+  "homepage": "https://github.com/yash-agrawal12/PluginSwiftDemo#readme"
+}
