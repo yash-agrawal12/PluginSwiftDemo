@@ -2,27 +2,26 @@
 
 #import <Cordova/CDV.h>
 
-@interface PluginSwiftDemo : CDVPlugin {
-  // Member variables go here.
-}
 
-- (void)coolMethod:(CDVInvokedUrlCommand*)command;
-@end
-
-@implementation PluginSwiftDemo
-
-- (void)coolMethod:(CDVInvokedUrlCommand*)command
-{
-    CDVPluginResult* pluginResult = nil;
-    NSString* echo = [command.arguments objectAtIndex:0];
-
-    if (echo != nil && [echo length] > 0) {
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:echo];
-    } else {
-        pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_ERROR];
+@objc(PluginSwiftDemo) class PluginSwiftDemo : CDVPlugin {
+  @objc(coolMethod:)
+  func coolMethod(_ command: CDVInvokedUrlCommand) {
+    
+    let msg = command.arguments[0] as? String ?? "Error"
+    print(msg)
+   var pluginResult = CDVPluginResult(
+      status: CDVCommandStatus_ERROR,
+      messageAs: msg
+    )
+if msg.count > 0 {
+      pluginResult = CDVPluginResult(
+        status: CDVCommandStatus_OK,
+        messageAs: msg
+      )
     }
-
-    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
-}
-
+self.commandDelegate!.send(
+      pluginResult,
+      callbackId: command.callbackId
+    ) 
+  }
 @end
